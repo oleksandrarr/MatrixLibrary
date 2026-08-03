@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmarks/multiplication_benchmark_native.cpp" "CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o" "gcc" "CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o.d"
+  "/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/src/MatrixLibrary.cpp" "CMakeFiles/MatrixLibrary.dir/src/MatrixLibrary.cpp.o" "gcc" "CMakeFiles/MatrixLibrary.dir/src/MatrixLibrary.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,6 +1,6 @@
 #include <stdexcept> //throws exception
 #include <bits/stdc++.h>
-#include "MatrixLibrary.h"
+#include <MatrixLibrary.h>
 using namespace std;
 
   Matrix::Matrix(size_t r, size_t c, vector<double> d) : rows(r), cols(c) 

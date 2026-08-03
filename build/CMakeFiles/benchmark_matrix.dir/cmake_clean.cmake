@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o"
-  "CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o.d"
-  "CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o"
-  "CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o.d"
+  "CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o"
+  "CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o.d"
   "benchmark_matrix"
   "benchmark_matrix.pdb"
 )

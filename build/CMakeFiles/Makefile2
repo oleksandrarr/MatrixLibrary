@@ -63,7 +63,8 @@ CMAKE_BINARY_DIR = /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/MatrixLibrary.dir/all
+all: CMakeFiles/matrix_tests.dir/all
 all: CMakeFiles/benchmark_matrix.dir/all
 .PHONY : all
 
@@ -72,49 +73,76 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/MatrixLibrary.dir/clean
+clean: CMakeFiles/matrix_tests.dir/clean
 clean: CMakeFiles/benchmark_matrix.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/MatrixLibrary.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=4,5,6 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/MatrixLibrary.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixLibrary.dir/build.make CMakeFiles/MatrixLibrary.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixLibrary.dir/build.make CMakeFiles/MatrixLibrary.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=1,2 "Built target MatrixLibrary"
+.PHONY : CMakeFiles/MatrixLibrary.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+CMakeFiles/MatrixLibrary.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MatrixLibrary.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/MatrixLibrary.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
-.PHONY : main
+MatrixLibrary: CMakeFiles/MatrixLibrary.dir/rule
+.PHONY : MatrixLibrary
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/MatrixLibrary.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixLibrary.dir/build.make CMakeFiles/MatrixLibrary.dir/clean
+.PHONY : CMakeFiles/MatrixLibrary.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/matrix_tests.dir
+
+# All Build rule for target.
+CMakeFiles/matrix_tests.dir/all: CMakeFiles/MatrixLibrary.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_tests.dir/build.make CMakeFiles/matrix_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_tests.dir/build.make CMakeFiles/matrix_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=5,6 "Built target matrix_tests"
+.PHONY : CMakeFiles/matrix_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/matrix_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/matrix_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 0
+.PHONY : CMakeFiles/matrix_tests.dir/rule
+
+# Convenience name for target.
+matrix_tests: CMakeFiles/matrix_tests.dir/rule
+.PHONY : matrix_tests
+
+# clean rule for target.
+CMakeFiles/matrix_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_tests.dir/build.make CMakeFiles/matrix_tests.dir/clean
+.PHONY : CMakeFiles/matrix_tests.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/benchmark_matrix.dir
 
 # All Build rule for target.
-CMakeFiles/benchmark_matrix.dir/all:
+CMakeFiles/benchmark_matrix.dir/all: CMakeFiles/MatrixLibrary.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=1,2,3 "Built target benchmark_matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=3,4 "Built target benchmark_matrix"
 .PHONY : CMakeFiles/benchmark_matrix.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/benchmark_matrix.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmark_matrix.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles 0
 .PHONY : CMakeFiles/benchmark_matrix.dir/rule

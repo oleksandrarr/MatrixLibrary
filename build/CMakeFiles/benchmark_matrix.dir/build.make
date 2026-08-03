@@ -69,48 +69,33 @@ include CMakeFiles/benchmark_matrix.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/benchmark_matrix.dir/flags.make
 
-CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o: CMakeFiles/benchmark_matrix.dir/flags.make
-CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o: /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmark.cpp
-CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o: CMakeFiles/benchmark_matrix.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o -MF CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o.d -o CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o -c /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmark.cpp
+CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o: CMakeFiles/benchmark_matrix.dir/flags.make
+CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o: /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmarks/multiplication_benchmark_native.cpp
+CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o: CMakeFiles/benchmark_matrix.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o -MF CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o.d -o CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o -c /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmarks/multiplication_benchmark_native.cpp
 
-CMakeFiles/benchmark_matrix.dir/benchmark.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark_matrix.dir/benchmark.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmark.cpp > CMakeFiles/benchmark_matrix.dir/benchmark.cpp.i
+CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmarks/multiplication_benchmark_native.cpp > CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.i
 
-CMakeFiles/benchmark_matrix.dir/benchmark.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark_matrix.dir/benchmark.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmark.cpp -o CMakeFiles/benchmark_matrix.dir/benchmark.cpp.s
-
-CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o: CMakeFiles/benchmark_matrix.dir/flags.make
-CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o: /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/MatrixLibrary.cpp
-CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o: CMakeFiles/benchmark_matrix.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o -MF CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o.d -o CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o -c /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/MatrixLibrary.cpp
-
-CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/MatrixLibrary.cpp > CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.i
-
-CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/MatrixLibrary.cpp -o CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.s
+CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/benchmarks/multiplication_benchmark_native.cpp -o CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.s
 
 # Object files for target benchmark_matrix
 benchmark_matrix_OBJECTS = \
-"CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o" \
-"CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o"
+"CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o"
 
 # External object files for target benchmark_matrix
 benchmark_matrix_EXTERNAL_OBJECTS =
 
-benchmark_matrix: CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o
-benchmark_matrix: CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o
+benchmark_matrix: CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o
 benchmark_matrix: CMakeFiles/benchmark_matrix.dir/build.make
+benchmark_matrix: libMatrixLibrary.a
 benchmark_matrix: /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3
 benchmark_matrix: CMakeFiles/benchmark_matrix.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable benchmark_matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable benchmark_matrix"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/benchmark_matrix.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

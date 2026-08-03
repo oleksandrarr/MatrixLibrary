@@ -117,17 +117,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named MatrixLibrary
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+MatrixLibrary: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MatrixLibrary
+.PHONY : MatrixLibrary
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+MatrixLibrary/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixLibrary.dir/build.make CMakeFiles/MatrixLibrary.dir/build
+.PHONY : MatrixLibrary/fast
+
+#=============================================================================
+# Target rules for targets named matrix_tests
+
+# Build rule for target.
+matrix_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 matrix_tests
+.PHONY : matrix_tests
+
+# fast build rule for target.
+matrix_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_tests.dir/build.make CMakeFiles/matrix_tests.dir/build
+.PHONY : matrix_tests/fast
 
 #=============================================================================
 # Target rules for targets named benchmark_matrix
@@ -142,80 +155,77 @@ benchmark_matrix/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/build
 .PHONY : benchmark_matrix/fast
 
-MatrixLibrary.o: MatrixLibrary.cpp.o
-.PHONY : MatrixLibrary.o
+benchmarks/multiplication_benchmark_native.o: benchmarks/multiplication_benchmark_native.cpp.o
+.PHONY : benchmarks/multiplication_benchmark_native.o
 
 # target to build an object file
-MatrixLibrary.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MatrixLibrary.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.o
-.PHONY : MatrixLibrary.cpp.o
+benchmarks/multiplication_benchmark_native.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.o
+.PHONY : benchmarks/multiplication_benchmark_native.cpp.o
 
-MatrixLibrary.i: MatrixLibrary.cpp.i
-.PHONY : MatrixLibrary.i
+benchmarks/multiplication_benchmark_native.i: benchmarks/multiplication_benchmark_native.cpp.i
+.PHONY : benchmarks/multiplication_benchmark_native.i
 
 # target to preprocess a source file
-MatrixLibrary.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MatrixLibrary.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.i
-.PHONY : MatrixLibrary.cpp.i
+benchmarks/multiplication_benchmark_native.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.i
+.PHONY : benchmarks/multiplication_benchmark_native.cpp.i
 
-MatrixLibrary.s: MatrixLibrary.cpp.s
-.PHONY : MatrixLibrary.s
+benchmarks/multiplication_benchmark_native.s: benchmarks/multiplication_benchmark_native.cpp.s
+.PHONY : benchmarks/multiplication_benchmark_native.s
 
 # target to generate assembly for a file
-MatrixLibrary.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/MatrixLibrary.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/MatrixLibrary.cpp.s
-.PHONY : MatrixLibrary.cpp.s
+benchmarks/multiplication_benchmark_native.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/benchmarks/multiplication_benchmark_native.cpp.s
+.PHONY : benchmarks/multiplication_benchmark_native.cpp.s
 
-benchmark.o: benchmark.cpp.o
-.PHONY : benchmark.o
+src/MatrixLibrary.o: src/MatrixLibrary.cpp.o
+.PHONY : src/MatrixLibrary.o
 
 # target to build an object file
-benchmark.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/benchmark.cpp.o
-.PHONY : benchmark.cpp.o
+src/MatrixLibrary.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixLibrary.dir/build.make CMakeFiles/MatrixLibrary.dir/src/MatrixLibrary.cpp.o
+.PHONY : src/MatrixLibrary.cpp.o
 
-benchmark.i: benchmark.cpp.i
-.PHONY : benchmark.i
+src/MatrixLibrary.i: src/MatrixLibrary.cpp.i
+.PHONY : src/MatrixLibrary.i
 
 # target to preprocess a source file
-benchmark.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/benchmark.cpp.i
-.PHONY : benchmark.cpp.i
+src/MatrixLibrary.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixLibrary.dir/build.make CMakeFiles/MatrixLibrary.dir/src/MatrixLibrary.cpp.i
+.PHONY : src/MatrixLibrary.cpp.i
 
-benchmark.s: benchmark.cpp.s
-.PHONY : benchmark.s
+src/MatrixLibrary.s: src/MatrixLibrary.cpp.s
+.PHONY : src/MatrixLibrary.s
 
 # target to generate assembly for a file
-benchmark.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matrix.dir/build.make CMakeFiles/benchmark_matrix.dir/benchmark.cpp.s
-.PHONY : benchmark.cpp.s
+src/MatrixLibrary.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MatrixLibrary.dir/build.make CMakeFiles/MatrixLibrary.dir/src/MatrixLibrary.cpp.s
+.PHONY : src/MatrixLibrary.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+tests/matrix_tests.o: tests/matrix_tests.cpp.o
+.PHONY : tests/matrix_tests.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
+tests/matrix_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_tests.dir/build.make CMakeFiles/matrix_tests.dir/tests/matrix_tests.cpp.o
+.PHONY : tests/matrix_tests.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+tests/matrix_tests.i: tests/matrix_tests.cpp.i
+.PHONY : tests/matrix_tests.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+tests/matrix_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_tests.dir/build.make CMakeFiles/matrix_tests.dir/tests/matrix_tests.cpp.i
+.PHONY : tests/matrix_tests.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+tests/matrix_tests.s: tests/matrix_tests.cpp.s
+.PHONY : tests/matrix_tests.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+tests/matrix_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/matrix_tests.dir/build.make CMakeFiles/matrix_tests.dir/tests/matrix_tests.cpp.s
+.PHONY : tests/matrix_tests.cpp.s
 
 # Help Target
 help:
@@ -225,17 +235,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... MatrixLibrary"
 	@echo "... benchmark_matrix"
-	@echo "... main"
-	@echo "... MatrixLibrary.o"
-	@echo "... MatrixLibrary.i"
-	@echo "... MatrixLibrary.s"
-	@echo "... benchmark.o"
-	@echo "... benchmark.i"
-	@echo "... benchmark.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... matrix_tests"
+	@echo "... benchmarks/multiplication_benchmark_native.o"
+	@echo "... benchmarks/multiplication_benchmark_native.i"
+	@echo "... benchmarks/multiplication_benchmark_native.s"
+	@echo "... src/MatrixLibrary.o"
+	@echo "... src/MatrixLibrary.i"
+	@echo "... src/MatrixLibrary.s"
+	@echo "... tests/matrix_tests.o"
+	@echo "... tests/matrix_tests.i"
+	@echo "... tests/matrix_tests.s"
 .PHONY : help
 
 

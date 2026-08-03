@@ -1,8 +1,8 @@
 #include <benchmark/benchmark.h>
-#include "MatrixLibrary.h"
+#include <MatrixLibrary.h>
 
 static void BM_Multiplication(benchmark::State& state){ 
-  const size_t n = state.range(0); //for custom arguments and sizes
+  const int n = state.range(0); //for custom arguments and sizes
   
   Matrix A(n, n, 0, 100);
   Matrix B(n, n, 0, 100);
@@ -11,14 +11,13 @@ static void BM_Multiplication(benchmark::State& state){
     Matrix C = A*B;
     benchmark::DoNotOptimize(C);
   }
+  
+  const double gflops = (2.0 * n*n*n) / 1e9;
+  state.counters["GFLOPS"] = benchmark::Counter(gflops, benchmark::Counter::kIsIterationInvariantRate);
+  
 }
 
 BENCHMARK(BM_Multiplication)
-  ->Arg(64)
-  ->Arg(128)
-  ->Arg(256)
-  ->Arg(512)
-  ->Arg(1024)
-  ->Arg(2048)
-  ->Arg(4096);
+  ->RangeMultiplier(2)
+  ->Range(64, 4096);
 BENCHMARK_MAIN();
