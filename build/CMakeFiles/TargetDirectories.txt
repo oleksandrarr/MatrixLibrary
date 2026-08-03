@@ -1,0 +1,3 @@
+/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles/main.dir
+/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles/edit_cache.dir
+/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/CMakeFiles/rebuild_cache.dir
