@@ -155,3 +155,11 @@ data[i * cols + j]
 - LU decomposition
 - Optimized matrix multiplication (cache blocking / SIMD)
 - Benchmark suite for performance comparison
+
+## Compile and execute
+
+cd build
+rm -rf *
+cmake ..
+cmake --build .
+./main
