@@ -156,6 +156,22 @@ data[i * cols + j]
 - Optimized matrix multiplication (cache blocking / SIMD)
 - Benchmark suite for performance comparison
 
+## Project Structure
+
+The project is organized following a common C++ modular layout:
+
+```text
+MatrixLibrary/
+│
+├── include/ -- Contains the public interface of the library (header files)
+├── src/ -- Contains the implementation of the library
+├── benchmarks/ -- Contains performance benchmarks implemented with Google Benchmark
+├── tests/ -- Contains unit tests that verify the correctness of the implemented operations
+└── CMakeLists.txt -- Build configuration for the repository
+```
+
+
+
 ## Compile and execute
 
 cd build
