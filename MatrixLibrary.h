@@ -11,8 +11,9 @@ private:
   std::vector<double> data = {0};
 
 public:
-  Matrix(size_t r, size_t c, std::vector<double> d);
-  Matrix(size_t r, size_t c);
+  Matrix(size_t r, size_t c, std::vector<double> d); //initialize with vector d
+  Matrix(size_t r, size_t c); //initialize with 0
+  Matrix(size_t r, size_t c, size_t min, size_t max); //initialize with random values between min and max
 
   Matrix operator+(const Matrix& other) const;
   Matrix operator-(const Matrix& other) const;

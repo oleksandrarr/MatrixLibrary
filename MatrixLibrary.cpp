@@ -1,4 +1,5 @@
 #include <stdexcept> //throws exception
+#include <bits/stdc++.h>
 #include "MatrixLibrary.h"
 using namespace std;
 
@@ -8,7 +9,15 @@ using namespace std;
     data = move(d); //to prevent copies
   }
   
-  Matrix::Matrix(size_t r, size_t c) : rows(r), cols(c), data(r*c, 0.0) {} //initialize to 0
+  Matrix::Matrix(size_t r, size_t c) : rows(r), cols(c), data(r*c, 0.0) {} 
+  
+  Matrix::Matrix(size_t r, size_t c, size_t min, size_t max) : rows(r), cols(c)
+  {
+    vector<double> d(r*c);
+    for(size_t i=0; i<r*c; i++) d[i] = min + rand()%max;
+    
+    data = move(d);
+  }
 
   Matrix Matrix::operator+(const Matrix& other) const{
      if(rows!=other.rows || cols != other.cols) throw invalid_argument("The matrices must be of the same size.");

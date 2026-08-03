@@ -37,5 +37,8 @@ int main(){
   cout<<"main.cpp: Identity matrix of B\n"<<Matrix::identity(3);
   
   cout<<"Size of A: ("<<A.getRows()<<", "<<A.getCols()<<")\n";
+  
+  Matrix AA(3, 3, 0, 100);
+  cout<<"Random A(3,3) from 0 to 100: \n"<<AA<<"\n";
   return 0;
 }
