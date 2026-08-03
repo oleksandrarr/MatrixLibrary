@@ -14,3 +14,17 @@ target_link_libraries(matrix_tests PRIVATE MatrixLibrary)
 find_package(benchmark REQUIRED)
 add_executable(benchmark_matrix benchmarks/multiplication_benchmark_native.cpp)
 target_link_libraries(benchmark_matrix PRIVATE MatrixLibrary benchmark::benchmark)
+
+#google tests
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+add_executable(tests tests/tests.cpp)
+target_link_libraries(tests PRIVATE MatrixLibrary GTest::gtest_main)
+include(GoogleTest)
+gtest_discover_tests(matrix_tests)

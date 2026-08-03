@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/matrix_tests.dir/tests/matrix_tests.cpp.o.d"
   "matrix_tests"
   "matrix_tests.pdb"
+  "matrix_tests[1]_tests.cmake"
 )
 
 # Per-language clean rules from dependency scanning.
