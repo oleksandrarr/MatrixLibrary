@@ -30,6 +30,12 @@ public:
   
   size_t getRows() const;
   size_t getCols() const;
+  
+  Matrix multiplyReorderedIKJ(const Matrix& other) const;
+  Matrix multiplyReorderedJIK(const Matrix& other) const;
+  Matrix multiplyReorderedJKI(const Matrix& other) const;
+  Matrix multiplyReorderedKIJ(const Matrix& other) const;
+  Matrix multiplyReorderedKJI(const Matrix& other) const;
 };
   
 #endif

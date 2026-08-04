@@ -130,7 +130,71 @@ using namespace std;
     return cols;
   }
 
+Matrix Matrix::multiplyReorderedIKJ(const Matrix& other) const {
+    if(cols != other.rows) throw invalid_argument("The number of columns in the first matrix must equal the number of rows in the second matrix.");
+    vector<double> res(rows*other.cols);
 
+    for(size_t i=0; i<rows; i++){
+      for(size_t k=0; k<cols; k++){
+        for(size_t j=0; j<other.cols; j++){
+        
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }
+  
+  Matrix Matrix::multiplyReorderedJIK(const Matrix& other) const {
+    if(cols != other.rows) throw invalid_argument("The number of columns in the first matrix must equal the number of rows in the second matrix.");
+    vector<double> res(rows*other.cols);
 
+    for(size_t j=0; j<other.cols; j++){
+      for(size_t i=0; i<rows; i++){
+        for(size_t k=0; k<cols; k++){
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }
+  
+  Matrix Matrix::multiplyReorderedJKI(const Matrix& other) const {
+    if(cols != other.rows) throw invalid_argument("The number of columns in the first matrix must equal the number of rows in the second matrix.");
+    vector<double> res(rows*other.cols);
 
-
+    for(size_t j=0; j<other.cols; j++){
+      for(size_t k=0; k<cols; k++){
+        for(size_t i=0; i<rows; i++){  
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }
+  Matrix Matrix::multiplyReorderedKIJ(const Matrix& other) const {
+    if(cols != other.rows) throw invalid_argument("The number of columns in the first matrix must equal the number of rows in the second matrix.");
+    vector<double> res(rows*other.cols);
+      
+    for(size_t k=0; k<cols; k++){
+     for(size_t i=0; i<rows; i++){
+       for(size_t j=0; j<other.cols; j++){
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }
+   Matrix Matrix::multiplyReorderedKJI(const Matrix& other) const {
+    if(cols != other.rows) throw invalid_argument("The number of columns in the first matrix must equal the number of rows in the second matrix.");
+    vector<double> res(rows*other.cols);
+      
+    for(size_t k=0; k<cols; k++){
+     for(size_t j=0; j<other.cols; j++){
+       for(size_t i=0; i<rows; i++){
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }

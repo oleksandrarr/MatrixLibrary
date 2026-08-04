@@ -25,7 +25,7 @@ gtest_discover_tests(tests)
 option(BUILD_BENCHMARKS "Build benchmarks" OFF)
 if(BUILD_BENCHMARKS)
   find_package(benchmark REQUIRED)
-  add_executable(benchmark_matrix benchmarks/multiplication_benchmark_native.cpp)
+  add_executable(benchmark_matrix benchmarks/benchmark_matrix.cpp)
   target_link_libraries(benchmark_matrix PRIVATE MatrixLibrary benchmark::benchmark)
 endif()
 
