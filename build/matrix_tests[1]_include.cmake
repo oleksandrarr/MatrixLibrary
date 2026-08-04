@@ -1,5 +1,0 @@
-if(EXISTS "/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/matrix_tests[1]_tests.cmake")
-  include("/home/oleksandra/Escritorio/MatrixLibrary/MatrixLibrary/build/matrix_tests[1]_tests.cmake")
-else()
-  add_test(matrix_tests_NOT_BUILT matrix_tests_NOT_BUILT)
-endif()
