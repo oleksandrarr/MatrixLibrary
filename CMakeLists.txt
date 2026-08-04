@@ -11,9 +11,12 @@ add_executable(matrix_tests tests/matrix_tests.cpp)
 target_link_libraries(matrix_tests PRIVATE MatrixLibrary)
 
 #benchmarks
-find_package(benchmark REQUIRED)
-add_executable(benchmark_matrix benchmarks/multiplication_benchmark_native.cpp)
-target_link_libraries(benchmark_matrix PRIVATE MatrixLibrary benchmark::benchmark)
+option(BUILD_BENCHMARKS "Build benchmarks" OFF)
+if(BUILD_BENCHMARKS)
+  find_package(benchmark REQUIRED)
+  add_executable(benchmark_matrix benchmarks/multiplication_benchmark_native.cpp)
+  target_link_libraries(benchmark_matrix PRIVATE MatrixLibrary benchmark::benchmark)
+endif()
 
 #google tests
 include(FetchContent)
