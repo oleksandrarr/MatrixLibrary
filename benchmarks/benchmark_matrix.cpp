@@ -60,10 +60,10 @@ int main(int argc, char** argv)
 
     std::cout << "\nBenchmark finished.\n";
 }
-//BENCHMARK(BM_Multiplication)->Name("Naive (IJK)")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_Multiplication)->Name("Naive (IJK)")->RangeMultiplier(2)->Range(64, 2048);
 BENCHMARK(BM_MultiplicationReorderedIKJ)->Name("Reordered (IKJ)")->RangeMultiplier(2)->Range(64, 2048);
 BENCHMARK(BM_MultiplicationReorderedJIK)->Name("Reordered (JIK)")->RangeMultiplier(2)->Range(64, 2048);
-//BENCHMARK(BM_MultiplicationReorderedJKI)->Name("Reordered (JKI)")->RangeMultiplier(2)->Range(64, 2048);
-//BENCHMARK(BM_MultiplicationReorderedKIJ)->Name("Reordered (KIJ)")->RangeMultiplier(2)->Range(64, 2048);
-//BENCHMARK(BM_MultiplicationReorderedKJI)->Name("Reordered (KJI)")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_MultiplicationReorderedJKI)->Name("Reordered (JKI)")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_MultiplicationReorderedKIJ)->Name("Reordered (KIJ)")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_MultiplicationReorderedKJI)->Name("Reordered (KJI)")->RangeMultiplier(2)->Range(64, 2048);
 //BENCHMARK_MAIN();
