@@ -7,9 +7,9 @@ Using a benchmark to evaluate the naive implementation, we observe that executio
 
 The computational complexity of matrix multiplication is: 
 
-\[ 
+```
 O(N^3)
-\]
+```
 
 because each output element requires a dot product between one row of the first matrix and one column of the second matrix.
 
