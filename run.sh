@@ -25,13 +25,17 @@ echo "====== Running tests... ======"
 
 echo "====== Running benchmarks... ======"
 
-./build/benchmark_matrix \
-    --benchmark_out=results/csv/benchmark.csv \
+./build/blocking_benchmark \
+    --benchmark_out=results/csv/blocking_benchmark.csv \
     --benchmark_out_format=csv \
     --benchmark_counters_tabular=true
-
+./build/reordered_benchmark \
+    --benchmark_out=results/csv/reordered_benchmark.csv \
+    --benchmark_out_format=csv \
+    --benchmark_counters_tabular=true
+    
 echo "====== Generating plots... ======"
 
-python3 benchmarks/plots.py
+python3 benchmarks/plots/plots.py
 
 echo "====== Done! ======"
