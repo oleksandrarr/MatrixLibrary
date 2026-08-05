@@ -6,6 +6,19 @@ set(CMAKE_CXX_STANDARD 20)
 add_library(MatrixLibrary src/MatrixLibrary.cpp src/MatrixMultiplication.cpp)
 target_include_directories(MatrixLibrary PUBLIC include)
 
+target_compile_options(MatrixLibrary PRIVATE
+    $<$<CONFIG:Release>:-O3>
+    $<$<CONFIG:Release>:-march=native>
+)
+
+option(VECTORIZATION_REPORT "Generate vectorization report" OFF)
+
+if(VECTORIZATION_REPORT)
+    target_compile_options(MatrixLibrary PRIVATE
+        -fopt-info-vec-all=vectorization_report.txt
+    )
+endif()
+
 #tests
 #google tests
 include(FetchContent)

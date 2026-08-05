@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     std::cout << "\nBenchmark finished.\n";
 }
 
-BENCHMARK(BM_Multiplication)->Name("Naive (IJK)")->RangeMultiplier(2)->Range(64, 2048);
-BENCHMARK(BM_MultiplicationNaiveBlocking)->Name("Naive Blocking")->RangeMultiplier(2)->Range(64, 2048);
-BENCHMARK(BM_MultiplicationReorderedIKJ)->Name("Reordered (IKJ)")->RangeMultiplier(2)->Range(64, 2048);
-BENCHMARK(BM_MultiplicationReorderedIKJBlocking)->Name("Reordered Blocking (IKJ)")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_Multiplication)->Name("Naive (IJK)")->RangeMultiplier(2)->Range(64, 4096);
+BENCHMARK(BM_MultiplicationNaiveBlocking)->Name("Naive Blocking")->RangeMultiplier(2)->Range(64, 4096);
+BENCHMARK(BM_MultiplicationReorderedIKJ)->Name("Reordered (IKJ)")->RangeMultiplier(2)->Range(64, 4096);
+BENCHMARK(BM_MultiplicationReorderedIKJBlocking)->Name("Reordered Blocking (IKJ)")->RangeMultiplier(2)->Range(64, 4096);

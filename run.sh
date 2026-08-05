@@ -21,7 +21,8 @@ echo "====== Configuring.. ======."
 cmake -S . -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_BENCHMARKS=ON \
-    -DBENCHMARKS_TO_BUILD="$BUILD_BENCHMARKS"
+    -DBENCHMARKS_TO_BUILD="$BUILD_BENCHMARKS" \
+    -DVECTORIZATION_REPORT=ON
 
 echo "====== Building... ======"
 
