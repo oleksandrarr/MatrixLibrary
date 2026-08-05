@@ -2,6 +2,13 @@
 
 set -e
 
+if [ $# -eq 0 ]; then
+    RUN_BENCHMARKS="reordered blocking"
+else
+    RUN_BENCHMARKS="$@"
+fi
+BUILD_BENCHMARKS=$(echo "$RUN_BENCHMARKS" | tr ' ' ';')
+
 rm -rf build
 rm -rf results
 
@@ -13,7 +20,8 @@ echo "====== Configuring.. ======."
 
 cmake -S . -B build \
     -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_BENCHMARKS=ON
+    -DBUILD_BENCHMARKS=ON \
+    -DBENCHMARKS_TO_BUILD="$BUILD_BENCHMARKS"
 
 echo "====== Building... ======"
 
@@ -25,17 +33,19 @@ echo "====== Running tests... ======"
 
 echo "====== Running benchmarks... ======"
 
-./build/blocking_benchmark \
-    --benchmark_out=results/csv/blocking_benchmark.csv \
+for BENCH in $RUN_BENCHMARKS
+do
+  echo "Running $BENCH"
+  ./build/${BENCH}_benchmark \
+    --benchmark_out=results/csv/${BENCH}_benchmark.csv \
     --benchmark_out_format=csv \
     --benchmark_counters_tabular=true
-./build/reordered_benchmark \
-    --benchmark_out=results/csv/reordered_benchmark.csv \
-    --benchmark_out_format=csv \
-    --benchmark_counters_tabular=true
-    
-echo "====== Generating plots... ======"
+done
 
-python3 benchmarks/plots/plots.py
+echo "====== Generating plots... ======"
+for BENCH in $RUN_BENCHMARKS
+do
+	python3 benchmarks/plots/plots.py $BENCH
+done
 
 echo "====== Done! ======"

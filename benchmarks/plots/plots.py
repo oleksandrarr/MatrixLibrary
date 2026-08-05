@@ -1,32 +1,38 @@
 import csv
 import re
+import sys
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
 data = defaultdict(lambda: {"size": [], "gflops": []})
+benchmarks = sys.argv[1:]
+print("ARGS:", benchmarks)
 
-with open("results/csv/benchmark.csv", newline="") as f:
-    for line in f:
-        if line.startswith("name,"):
-            header = next(csv.reader([line]))
-            break
+for bench in benchmarks:
+    filename = f"results/csv/{bench}_benchmark.csv"
+    print(f"Reading {filename}")
+    with open(filename, newline="") as f:
+        for line in f:
+            if line.startswith("name,"):
+                header = next(csv.reader([line]))
+                break
 
-    reader = csv.DictReader(f, fieldnames=header)
+        reader = csv.DictReader(f, fieldnames=header)
 
-    for row in reader:
-        name = row["name"]
+        for row in reader:
+            name = row["name"]
 
-        # separar implementación y tamaño
-        match = re.match(r"(.+)/(\d+)", name)
+            # separar implementación y tamaño
+            match = re.match(r"(.+)/(\d+)", name)
 
-        if match:
-            implementation = match.group(1)
-            size = int(match.group(2))
+            if match:
+                implementation = match.group(1)
+                size = int(match.group(2))
 
-            gflops = float(row["GFLOPS"].replace("/s", ""))
+                gflops = float(row["GFLOPS"].replace("/s", ""))
 
-            data[implementation]["size"].append(size)
-            data[implementation]["gflops"].append(gflops)
+                data[implementation]["size"].append(size)
+                data[implementation]["gflops"].append(gflops)
 
 
 plt.figure(figsize=(10, 6))

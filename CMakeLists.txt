@@ -23,13 +23,23 @@ gtest_discover_tests(tests)
 
 #benchmarks
 option(BUILD_BENCHMARKS "Build benchmarks" OFF)
+set(AVAILABLE_BENCHMARKS 
+	reordered 
+	blocking)
+	
+set(BENCHMARKS_TO_BUILD "all" CACHE STRING "Benchmarks to build")
+
 if(BUILD_BENCHMARKS)
   find_package(benchmark REQUIRED)
-  add_executable(reordered_benchmark benchmarks/reordered_benchmark.cpp)
-  target_link_libraries(reordered_benchmark PRIVATE MatrixLibrary benchmark::benchmark)
-  
-  add_executable(blocking_benchmark benchmarks/blocking_benchmark.cpp)
-  target_link_libraries(blocking_benchmark PRIVATE MatrixLibrary benchmark::benchmark)
+  if(BENCHMARKS_TO_BUILD STREQUAL "all")
+    set(SELECTED_BENCHMARKS ${AVAILABLE_BENCHMARKS})
+  else()
+    set(SELECTED_BENCHMARKS ${BENCHMARKS_TO_BUILD})
+  endif()
+  foreach(BENCH ${SELECTED_BENCHMARKS})
+    add_executable(${BENCH}_benchmark benchmarks/${BENCH}_benchmark.cpp)
+    target_link_libraries(${BENCH}_benchmark PRIVATE MatrixLibrary benchmark::benchmark)
+  endforeach()
 endif()
 
 
