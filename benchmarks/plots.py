@@ -32,17 +32,24 @@ with open("results/csv/benchmark.csv", newline="") as f:
 plt.figure(figsize=(10, 6))
 
 for impl, values in data.items():
-    # ordenar por tamaño
-    sizes, gflops = zip(*sorted(
-        zip(values["size"], values["gflops"])
-    ))
+    sizes, gflops = zip(*sorted(zip(values["size"], values["gflops"])))
 
-    plt.plot(
-        sizes,
-        gflops,
-        marker="o",
-        label=impl
-    )
+    if impl == "Naive (IJK)":
+        plt.plot(
+            sizes,
+            gflops,
+            linewidth=3,
+            marker="o",
+            label=impl
+        )
+    else:
+        plt.plot(
+            sizes,
+            gflops,
+            marker="o",
+            alpha=0.7,
+            label=impl
+        )
 
 
 plt.xlabel("Matrix size (N x N)")

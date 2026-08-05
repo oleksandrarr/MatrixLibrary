@@ -15,4 +15,9 @@ benchmark_matrix
 *.so
 *.dll
 *.dylib
+*.pyc
+__pycache__/
+
+/results/
+
 

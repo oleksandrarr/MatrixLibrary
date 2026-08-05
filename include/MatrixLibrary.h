@@ -36,6 +36,9 @@ public:
   Matrix multiplyReorderedJKI(const Matrix& other) const;
   Matrix multiplyReorderedKIJ(const Matrix& other) const;
   Matrix multiplyReorderedKJI(const Matrix& other) const;
+  
+  Matrix naiveBlocking(const Matrix& other) const;
+  Matrix reorderedIKJBlocking(const Matrix& other) const;
 };
   
 #endif
