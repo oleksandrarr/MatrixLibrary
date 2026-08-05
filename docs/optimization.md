@@ -86,11 +86,24 @@ for(block_i)
       multiply tiles
 ```
 
-### The Size Selection
+### Tile Size Selection
 
-The CPU used for testing has 32 KiB L1 Data Cache and the element type used is double (8 bytes). The tile size was selected considering the amount of data that can fit in the cache.
+The processor used for the experiments has a 32 KiB L1 data cache, and the matrix elements are stored as `double` values (8 bytes each). Since blocking aims to keep the working data set in the cache, the tile size has a significant impact on performance.
 
-The rigorous study of tile size: ...
+Rather than selecting a tile size based solely on the cache capacity, an empirical evaluation was performed. Several tile sizes were benchmarked across different matrix sizes for both the naive and the reordered implementations.
+
+<img width="800" height="500" alt="naiveSizes" src="https://github.com/user-attachments/assets/cb2b760a-ad6c-44a0-be10-425dce5cd9cb" />
+
+<img width="800" height="500" alt="blockingSizes" src="https://github.com/user-attachments/assets/e658881f-b13b-4531-9b75-924f6f4e561f" />
+
+The results show that:
+
+- For the naive implementation, tile sizes of **16** and **32** consistently provide the best performance.
+- For the reordered implementation, larger tiles (**64** and **128**) perform better for very small and very large matrices, while **16** and **32** are more efficient for intermediate sizes.
+
+Although no single tile size is optimal for every configuration, **32×32** provides the best overall trade-off. It delivers consistently high performance across all tested matrix sizes while avoiding the performance degradation observed with larger tiles in some cases.
+
+For this reason, a tile size of **32×32** was selected for the remainder of the experiments.
 
 ### Blocking Results
 
