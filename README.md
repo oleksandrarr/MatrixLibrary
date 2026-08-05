@@ -159,6 +159,14 @@ The experimental setup used:
 - L2 Cache: 512 KiB
 - L3 Cache: 4 MiB
 
+This project studies several optimizations:
+- Loop ordering
+- Tiling / blocking
+- Vectorization
+- OpenMP
+- CUDA
+
+
 ---
 
 ## Project Structure
