@@ -10,6 +10,8 @@ private:
   size_t cols = 0;
   std::vector<double> data = {0};
 
+  void checkDimensions(const Matrix& other) const;
+  
 public:
   Matrix(size_t r, size_t c, std::vector<double> d); //initialize with vector d
   Matrix(size_t r, size_t c); //initialize with 0

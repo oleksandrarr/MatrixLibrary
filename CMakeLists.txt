@@ -3,7 +3,7 @@ project(MatrixLibrary)
 set(CMAKE_CXX_STANDARD 20)
 
 #general
-add_library(MatrixLibrary src/MatrixLibrary.cpp)
+add_library(MatrixLibrary src/MatrixLibrary.cpp src/MatrixMultiplication.cpp)
 target_include_directories(MatrixLibrary PUBLIC include)
 
 #tests

@@ -1,31 +1,37 @@
 import csv
 import re
+import sys
 from collections import defaultdict
 
 import matplotlib.pyplot as plt
 
 
 data = defaultdict(dict)
+benchmarks = sys.argv[1:]
+print("ARGS:", benchmarks)
 
-# Leer CSV de Google Benchmark
-with open("results/csv/benchmark.csv", newline="") as f:
 
-    for line in f:
-        if line.startswith("name,"):
-            header = next(csv.reader([line]))
-            break
+for bench in benchmarks:
+    filename = f"results/csv/{bench}_benchmark.csv"
+    print(f"Reading {filename}")
+    with open(filename, newline="") as f:
 
-    reader = csv.DictReader(f, fieldnames=header)
+        for line in f:
+            if line.startswith("name,"):
+                header = next(csv.reader([line]))
+                break
 
-    for row in reader:
-        match = re.match(r"(.+)/(\d+)", row["name"])
+        reader = csv.DictReader(f, fieldnames=header)
 
-        if match:
-            impl = match.group(1)
-            size = int(match.group(2))
-            gflops = float(row["GFLOPS"].replace("/s", ""))
+        for row in reader:
+            match = re.match(r"(.+)/(\d+)", row["name"])
 
-            data[impl][size] = gflops
+            if match:
+                impl = match.group(1)
+                size = int(match.group(2))
+                gflops = float(row["GFLOPS"].replace("/s", ""))
+
+                data[impl][size] = gflops
 
 
 baseline_name = "Naive (IJK)"

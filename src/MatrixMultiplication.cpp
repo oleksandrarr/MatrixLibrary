@@ -1,6 +1,6 @@
 #include <stdexcept> //throws exception
 #include <bits/stdc++.h>
-#include <MatrixLibrary.h>
+#include "MatrixLibrary.h"
 using namespace std;
 
 inline void Matrix::checkDimensions(const Matrix& other) const{
@@ -81,9 +81,8 @@ Matrix Matrix::multiplyReorderedIKJ(const Matrix& other) const {
     Matrix Matrix::naiveBlocking(const Matrix& other) const {
     checkDimensions(other);
     vector<double> res(rows*other.cols);
-
-    const int BS = 32;
     
+    size_t BS = 32;
     for(size_t ii=0; ii<rows; ii+=BS){
       for(size_t jj=0; jj<other.cols; jj+=BS){
         for(size_t kk=0; kk<cols; kk+=BS){
