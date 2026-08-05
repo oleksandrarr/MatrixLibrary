@@ -47,6 +47,8 @@ echo "====== Generating plots... ======"
 for BENCH in $RUN_BENCHMARKS
 do
 	python3 benchmarks/plots/plots.py $BENCH
+	python3 benchmarks/plots/plotSpeedup.py $BENCH
+	python3 benchmarks/plots/summary.py $BENCH
 done
 
 echo "====== Done! ======"
