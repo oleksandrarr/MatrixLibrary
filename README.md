@@ -147,6 +147,20 @@ data[i * cols + j]
 
 ---
 
+## Optimization and Experimens
+
+After implementing the matrix library, several matrix multiplication optimizations were studied to improve performance. The complete analysis, including benchmark results and performance comparisons, can be found in [docs/optimization.md](/docs/optimization.md).
+
+The experimental setup used:
+
+**Hardware**:
+- 16 cores
+- L1 Data Cache: 32 KiB
+- L2 Cache: 512 KiB
+- L3 Cache: 4 MiB
+
+---
+
 ## Project Structure
 
 The project is organized following a common C++ modular layout:
@@ -162,6 +176,10 @@ MatrixLibrary/
 ├── run.sh          # Script to execute the program
 └── CMakeLists.txt  # CMake file to build configuration for the repository
 ```
+
+---
+
+
 
 
 
