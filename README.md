@@ -164,7 +164,6 @@ This project studies several optimizations:
 - Tiling / blocking
 - Vectorization
 - OpenMP
-- CUDA
 
 
 ---
@@ -208,6 +207,7 @@ Multiple benchmarks can also be executed together:
 Currently, the available benchmarks are:
 - reordered: evaluates the six possible loop reordering strategies for matrix multiplication
 - blocking: compares different cache-blocking approaches
+- openmp: compares different directives of OpenMP
 
 After execution, all generated results are stored in the results directory:
 ```text
