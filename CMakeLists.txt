@@ -3,8 +3,10 @@ project(MatrixLibrary)
 set(CMAKE_CXX_STANDARD 20)
 
 #general
+find_package(OpenMP REQUIRED)
 add_library(MatrixLibrary src/MatrixLibrary.cpp src/MatrixMultiplication.cpp)
 target_include_directories(MatrixLibrary PUBLIC include)
+target_link_libraries(MatrixLibrary PUBLIC OpenMP::OpenMP_CXX)
 
 target_compile_options(MatrixLibrary PRIVATE
     $<$<CONFIG:Release>:-O3>

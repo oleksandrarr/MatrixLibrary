@@ -41,6 +41,11 @@ public:
   
   Matrix naiveBlocking(const Matrix& other) const;
   Matrix reorderedIKJBlocking(const Matrix& other) const;
+
+  Matrix multiplyReorderedIKJOmpParallelFor(const Matrix& other) const;
+  Matrix multiplyReorderedIKJOmpParallelForCollapse2(const Matrix& other) const;
+   Matrix multiplyReorderedIKJOmpParallelForStatic(const Matrix& other) const;
+  
 };
   
 #endif

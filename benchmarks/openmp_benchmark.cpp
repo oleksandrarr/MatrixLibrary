@@ -7,27 +7,25 @@ static void BM_Multiplication(benchmark::State& state){
     return A*B;
   });
 }
-
-static void BM_MultiplicationNaiveBlocking(benchmark::State& state){ 
+static void BM_MultiplicationIKJOmpParallelFor(benchmark::State& state){
   MultiplicationTemplate(state, [](const Matrix& A, const Matrix& B){
-    return A.naiveBlocking(B);
+    return A.multiplyReorderedIKJOmpParallelFor(B);
   });
 }
-static void BM_MultiplicationReorderedIKJ(benchmark::State& state){ 
+static void BM_MultiplicationIKJOmpParallelForCollapse2(benchmark::State& state){
   MultiplicationTemplate(state, [](const Matrix& A, const Matrix& B){
-    return A.multiplyReorderedIKJ(B);
+    return A.multiplyReorderedIKJOmpParallelForCollapse2(B);
   });
 }
-static void BM_MultiplicationReorderedIKJBlocking(benchmark::State& state){ 
+static void BM_MultiplicationIKJOmpParallelForStatic(benchmark::State& state){
   MultiplicationTemplate(state, [](const Matrix& A, const Matrix& B){
-    return A.reorderedIKJBlocking(B);
+    return A.multiplyReorderedIKJOmpParallelForStatic(B);
   });
 }
-
 int main(int argc, char** argv)
 {
     std::cout << "=============================================================\n";
-    std::cout << "             Blocking Matrix Multiplication Benchmark\n";
+    std::cout << "    Matrix Multiplication Benchmark\n";
     std::cout << "=============================================================\n\n";
 
     benchmark::Initialize(&argc, argv);
@@ -38,6 +36,6 @@ int main(int argc, char** argv)
 }
 
 BENCHMARK(BM_Multiplication)->Name("Naive (IJK)")->RangeMultiplier(2)->Range(64, 2048);
-BENCHMARK(BM_MultiplicationNaiveBlocking)->Name("Naive Blocking")->RangeMultiplier(2)->Range(64, 2048);
-BENCHMARK(BM_MultiplicationReorderedIKJ)->Name("Reordered (IKJ)")->RangeMultiplier(2)->Range(64, 2048);
-BENCHMARK(BM_MultiplicationReorderedIKJBlocking)->Name("Reordered Blocking (IKJ)")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_MultiplicationIKJOmpParallelFor)->Name("IKJ ParallelFor")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_MultiplicationIKJOmpParallelForCollapse2)->Name("IKJ ParallelFor Collapse2")->RangeMultiplier(2)->Range(64, 2048);
+BENCHMARK(BM_MultiplicationIKJOmpParallelForStatic)->Name("IKJ ParallelFor Static")->RangeMultiplier(2)->Range(64, 2048);

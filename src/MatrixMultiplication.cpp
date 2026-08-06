@@ -1,5 +1,6 @@
 #include <stdexcept> //throws exception
 #include <bits/stdc++.h>
+#include <omp.h>
 #include "MatrixLibrary.h"
 using namespace std;
 
@@ -116,3 +117,65 @@ Matrix Matrix::reorderedIKJBlocking(const Matrix& other) const {
     }
     return Matrix(rows, other.cols, res);
   }
+  
+  
+  
+   Matrix Matrix::multiplyReorderedIKJOmpParallelFor(const Matrix& other) const {
+    checkDimensions(other);
+    vector<double> res(rows*other.cols);
+
+    omp_set_num_threads(16);
+
+    #pragma omp parallel for
+    for(size_t i=0; i<rows; i++){
+      for(size_t k=0; k<cols; k++){
+        #pragma omp simd
+        for(size_t j=0; j<other.cols; j++){
+        
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }
+  
+  Matrix Matrix::multiplyReorderedIKJOmpParallelForCollapse2(const Matrix& other) const {
+    checkDimensions(other);
+    vector<double> res(rows*other.cols);
+
+    omp_set_num_threads(16);
+
+    #pragma omp parallel for collapse(2)
+    for(size_t i=0; i<rows; i++){
+      for(size_t k=0; k<cols; k++){
+        #pragma omp simd
+        for(size_t j=0; j<other.cols; j++){
+        
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }
+  
+  
+  Matrix Matrix::multiplyReorderedIKJOmpParallelForStatic(const Matrix& other) const {
+    checkDimensions(other);
+    vector<double> res(rows*other.cols);
+
+    omp_set_num_threads(16);
+    
+    #pragma omp parallel for schedule(static)
+    for(size_t i=0; i<rows; i++){
+      for(size_t k=0; k<cols; k++){
+        #pragma omp simd
+        for(size_t j=0; j<other.cols; j++){
+        
+          res[i*other.cols+j] += data[i*cols+k] * other.data[k*other.cols+j];
+        }
+      }
+    }
+    return Matrix(rows, other.cols, res);
+  }
+  
+
