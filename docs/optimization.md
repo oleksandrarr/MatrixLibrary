@@ -245,3 +245,14 @@ Finally, the `#pragma omp simd` directive was added on top of automatic vectoriz
 <img width="1000" height="600" alt="speedupOpenmpSIMD" src="https://github.com/user-attachments/assets/710ca28a-9ae6-4746-842b-52b1ddcf0dd0" />
 
 
+## 6. Key Results
+
+* Loop reordering was one of the most effective optimizations. The `IKJ` loop ordering consistently achieved better performance than the naive implementation by improving spatial locality, cache utilization and data reuse.
+* Blocking improves scalability for large matrices. Although tiling introduces some overhead for small inputs, it becomes increasingly beneficial as the matrix size grows because it reduces cache evictions and keeps frequently accessed data closer to the CPU.
+* A tile size of 32x32 provided the best overall trade-off across the tested matrix sizes, although the optimal tile size depends on the matrix size and implementation.
+* Compiler vectorization has a strong dependency on memory access patterns. The compiler successfully vectorized implementations such as `IKJ` and `KIJ`, generating AVX instructions that process multiple double-precision values simultaneously. In contrast, column-wise and non-contiguous memory accesses limited vectorization opportunities.
+* The optimized reordered implementation reached almost 36 GFLOPS, compared with approximately 35.5 GFLOPS without compiler vectorization.
+* OpenMP scheduling strategies depend strongly on problem size. `collapse(2)` performed particularly well for small matrices, while `schedule(static)` was generally better for medium sized matrices. For large matrices, `dynamic` and `guided` scheduling became increasingly competitive.
+* Thread scalability depends on the workload. Small matrices reached their best performance aroun 8 threads, while larger matrices benefited from up to 16 threads. Adding threads beyond the useful parallelism can introduce scheduling and synchronization overhead.
+* Combining OpenMP with compiler vectorization produced significant gains, particularly for small and medium sized matrices, with improvements of almost 50% for 64x64, 98% for 256x256 and 56% for 512x512 matrices in the `parallel for` implementation.
+* Explicit `omp simd` did not generally outperform automatic vectorization. This suggests that GCC was already able to exploit most of the available SIMD opportunities, although `omp simd` helped in the `collapse(2)` case.
